@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  background-color: rgb(0, 0, 0);
+  height: 60px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  
+}
+.ulNav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 50px;
+}
+
+.ulNav li {
+  margin: 20px 20px;
+  
+}
+
+.ulNav li a {
+  text-decoration: none;
   color: white;
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.App-link {
-  color: #61dafb;
+/* .iconoCarrito {
+  width: 70px;
+  background-image: url("https://img.icons8.com/material-outlined/24/000000/shopping-cart--v1.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 15px;
+  right: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.numeroCarrito  {
+width: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  text-align: center;
+  position:relative;
+  top: 0;
+  right: 0;
+} */
+
+.contenedorLogo{
+  margin: 0 50px;
 }
