@@ -1,4 +1,5 @@
 import '../App.css';
+import CartWidget from './cartWidget';
 const Navbar = () => {
     return (
       
@@ -14,6 +15,7 @@ const Navbar = () => {
             <li><a href="#">Otro</a></li>
             </ul>         
         </navbar>
+        <CartWidget/>
        </header>
       
     );
