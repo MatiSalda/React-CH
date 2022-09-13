@@ -1,8 +1,14 @@
 import "../App.css";
+import ItemCount from "./itemCount";
+import { useState } from 'react';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
+    
+    
     return(
-        <h1>{props.name}</h1>
+        <ItemCount>
+            
+        </ItemCount>
     )
 }
 

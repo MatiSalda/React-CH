@@ -60,3 +60,86 @@
 .contenedorLogo{
   margin: 0 0 0 50px;
 }
+
+.botonesContadorCarrito{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.divContador{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+width: 110px;
+
+}
+
+.btnSumar{
+  background-image: url("https://img.icons8.com/ios-filled/30/ffffff/plus-math.png");
+  background-repeat: no-repeat;
+  background-color: rgb(0, 0, 0);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  border: 2px black solid;
+  cursor: pointer;
+  transition: all .1s;
+}
+
+.btnRestar{
+  background-image: url("https://img.icons8.com/ios-filled/30/ffffff/minus-math.png");
+  background-repeat: no-repeat;
+  background-color: rgb(0, 0, 0);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  border: 2px black solid;
+  cursor: pointer;
+  transition: all .1s;
+}
+
+.btnRestar:active{
+  background-image: url("https://img.icons8.com/ios-filled/30/000000/minus-math.png");
+  background-color: white;
+  border: 2px black solid;
+  color: black;
+}
+
+.btnSumar:active{
+  background-image: url("https://img.icons8.com/ios-filled/30/000000/plus-math.png");
+  background-color: white;
+  border: 2px black solid;
+  color: black;
+}
+
+
+.btnCantidad {
+  background-color: white;
+  border: 2px black solid;
+  width: 40px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 15px;
+  height: 30px;
+}
+
+.btnAgregarCarrito {
+  background-color: white;
+  border: 2px black solid;
+  font-style: none;
+  height: 30px; width: 120px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.btnAgregarCarrito:active{
+  background-color: black;
+  color: white;
+}
+
