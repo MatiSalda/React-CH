@@ -5,7 +5,9 @@ const Navbar = () => {
       
        <header className='header'>
         <div className='contenedorLogo'>
-          <img src="https://img.icons8.com/ios/50/ffffff/medium-new.png"/></div>
+          <h1 className='logo'>𝗞𝗠𝗗</h1>
+          {/* <img src="https://img.icons8.com/ios/50/ffffff/medium-new.png"/> */}
+        </div>
        
         <div className='navbar'>
           <ul className='ulNav'>

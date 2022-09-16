@@ -1,17 +1,9 @@
 import '../App.css';
 import Item from './item';
-import {useEffect, useState} from 'react'
+
 import listaProductos from './baseDatos'
 import fetchDB from './fetchDB';
-const Items = () => {
-
-const [data, setData] = useState([])
-    useEffect(() => {
-        fetchDB(2000,listaProductos)
-        .then(result => setData(result))
-        .catch(error => console.log(error))      
-    }, []);
-
+const Items = ({data}) => {
 
     return(
         <div className='containerProductos'>
