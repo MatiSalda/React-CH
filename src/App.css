@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   font-family: 'Roboto Mono', monospace;
-  font-weight: 600
+  font-weight: 600;
+  box-sizing: border-box;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
@@ -13,14 +14,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .ulNav {
   list-style: none;
   display: flex;
   align-items: center;
-  margin: 50px;
 }
 
 .ulNav li {
@@ -33,6 +32,7 @@
   color: white;
   font-size: 20px;
   font-weight: 400;
+  text-align: center;
 }
 
 .containerCartWidget {
@@ -63,8 +63,10 @@
   right: -5px;
 }
 
-.contenedorLogo {
-  margin: 0 0 0 50px;
+.contenedorLogo a{
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
 }
 
 .logo {
@@ -194,6 +196,8 @@
 
 .containerProductos {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
 }
 
@@ -259,4 +263,30 @@ top: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbarLink{
+  text-decoration: none;
+  border: none;
+  color: white;
+
+}
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
+
+
+p:link, p:visited, p:active{
+  text-decoration: none;
+  color: black;
+} 
+.infoCardDetail{
+  background-color: white;
+  color: black;
+  width: 100px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
 }

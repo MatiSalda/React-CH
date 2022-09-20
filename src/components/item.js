@@ -1,6 +1,6 @@
 import '../App.css';
-
-const Item = ({nombre,stock,img,precio}) => {
+import { Link } from 'react-router-dom';
+const Item = ({nombre,stock,img,precio,id}) => {
     return(
         <div className='card'>
     <h1 className='tituloCard'>{nombre}</h1>
@@ -9,6 +9,7 @@ const Item = ({nombre,stock,img,precio}) => {
     <p className='infoCard'>{stock}</p>
     <p className='infoCard'>${precio}</p>
     </div>
+   <Link to={"/item/"+ id}> <p className='infoCardDetail'>ver detalles</p></Link>
         </div>
     )
 }  

@@ -15,6 +15,7 @@ const Items = ({data}) => {
             nombre={item.nombre}
             img={item.imagen}
             precio={item.precio}
+            id={item.id}
             />
         ))
        }
