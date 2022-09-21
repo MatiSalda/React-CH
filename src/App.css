@@ -167,7 +167,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+ 
 }
 
 .infoCard {
@@ -175,14 +175,14 @@
   width: 50px;
   text-align: center;
   margin: 10px;
-  border-radius: 10px;
+  
   display: inline-block;
 }
 
 .tituloCard {
   background-color: white;
   margin-top: 10px;
-  border-radius: 20px;
+  
   width: 200px;
   text-align: center;
 
@@ -190,7 +190,7 @@
 
 .imgCard {
   width: 200px;
-  border-radius: 10px;
+ 
   margin: 10px;
 }
 
@@ -286,7 +286,7 @@ p:link, p:visited, p:active{
   width: 100px;
   text-align: center;
   margin: 10px;
-  border-radius: 10px;
+  
   display: inline-block;
   cursor: pointer;
 }

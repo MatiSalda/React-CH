@@ -1,34 +1,33 @@
 import '../App.css'
 import ItemCount from './itemCount.js'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({data}) => {
-    const [total, setTotal] = useState(0);
-    const addOn = () => {
-        alert(`Agregaste ${total} ${data.nombre}s`)
-        }
-    const restar = () => {
-        if (total <=0) {
-            
-        }else setTotal(total-1);
+    
+    const [itemCount, setItemCount] = useState(0)
+    
+    const addOn = (total) => {
+        setItemCount(total)
     }
-    const sumar = () => {
-        if (total < data.stock)
-        setTotal(total+1);
-    }
+   
    
     return (
         <div className='detailContainer'>
             <div className="fotoDescripcion">
             <h1 className='tituloDetail'>{data.nombre}</h1> 
                 <img src={data.imagen}/>
+                {
+                itemCount === 0
+                ? 
                 <ItemCount
                 data={data}
-                sumar={sumar}
-                restar={restar}
-                total={total}
-                alerta={addOn}        
-                /> 
+                alerta={addOn}/> 
+                
+                :  <Link to="/cart" > <button>Chekout</button></Link>
+            }
+                 
+                
             </div>
           <div className='infoDetail'>
             <h3>${data.precio}</h3>
