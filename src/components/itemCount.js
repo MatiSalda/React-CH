@@ -36,7 +36,7 @@ const ItemCount = ({alerta,data}) => {
 <div onClick={sumar} className='btnSumar'></div>
         
         </div>
-        <button onClick={agregarCarrito} className='btnAgregarCarrito'>Agregar al carrito</button>
+        <button onClick={agregarCarrito} >Agregar al carrito</button>
         </div>
     )
 }

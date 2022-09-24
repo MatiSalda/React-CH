@@ -1,14 +1,17 @@
 import '../App.css'
 import ItemCount from './itemCount.js'
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from './cartContext';
 
 const ItemDetail = ({data}) => {
-    
+
+    const {addItem,isInCart} = useContext(CartContext);    
     const [itemCount, setItemCount] = useState(0)
     
     const addOn = (total) => {
         setItemCount(total)
+        addItem(data,total)
     }
    
    
@@ -24,7 +27,7 @@ const ItemDetail = ({data}) => {
                 data={data}
                 alerta={addOn}/> 
                 
-                :  <Link to="/cart" > <button>Chekout</button></Link>
+                :  <Link to="/cart" > <button className='btnChekOut'>Chekout</button></Link>
             }
                  
                 
