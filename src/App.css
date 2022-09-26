@@ -293,6 +293,7 @@ p:link, p:visited, p:active{
 
 .containerCarrito{
   width: 90%;
+  
   border: 2px solid black;
   display: flex;
   margin: 20px auto;
@@ -319,4 +320,26 @@ p:link, p:visited, p:active{
 .imagenProductoCarrito img{
   width: 90%;
   background-color: black;
+}
+
+.borrarProducto{
+  background-color: white;
+  border: 2px black solid;
+  font-style: none;
+  height: 30px;
+  width: 180px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.borrarTodo{
+  background-color: white;
+  border: 2px black solid;
+  font-style: none;
+  height: 30px;
+  width: 180px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all .2s;
 }
