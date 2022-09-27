@@ -11,6 +11,7 @@ const CartContextProvider = ({children}) => {
         setCartList(cartList.map(product => {
             return product.id === producto.id ? {
                 ...product, cantidad : product.cantidad + cantidad}  : producto
+        
         }))
        } else {
             setCartList([...cartList, {...producto, cantidad}])
@@ -25,7 +26,7 @@ const CartContextProvider = ({children}) => {
 
 
     const removeItem = (id) => setCartList(cartList.filter((product) => product.id !==id));
-    
+
 
     return(
         <CartContext.Provider value={{cartList,addItem, clear,removeItem,isInCart}}>
