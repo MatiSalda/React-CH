@@ -3,7 +3,6 @@ import ItemCount from './itemCount.js'
 import { useState,useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from './cartContext';
-
 const ItemDetail = ({data}) => {
 
     const {addItem,isInCart} = useContext(CartContext);    

@@ -5,6 +5,9 @@ import listaProductos from '../baseDatos'
 import fetchDB from '../fetchDB';
 import { useState,useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import { db } from "../firebaseConfig";
+import { collection } from "firebase/firestore";
+import { getDocs} from "firebase/firestore";
 
 
 const ItemListContainer = () => {
@@ -27,20 +30,19 @@ const ItemListContainer = () => {
 
     const [data, setData] = useState([])
     useEffect(() => {
-        if(id){
-            setCargando(true)
-        fetchDB(2000,listaProductos.filter(item=> item.categoryId == id))
+        
+        const firestoreFetch = async() =>{
+      const querySnapshot = await getDocs(collection(db, "productos"))
+      const dataFromFirestore = querySnapshot.docs.map(document => ({
+        id: document.id,
+        ...document.data()
+      }))
+     return dataFromFirestore
+    }
+    firestoreFetch()
         .then(result => setData(result))
-        .catch(error => console.log(error))  
-        .finally(()=>setCargando(false))    
-        } else {
-            setCargando(true)
-            fetchDB(2000,listaProductos)
-            .then(result => setData(result))
-            .catch(error => console.log(error))  
-            .finally(()=>setCargando(false))   
-            }
-    }, [id]);
+
+    }, [data]);
     return(
         <div>
         {cargando ?  <div className='containerCargando'><h1 className='cargando'>Cargando..</h1></div> : <Items

@@ -27,6 +27,7 @@ const CartContextProvider = ({children}) => {
 
     const removeItem = (id) => setCartList(cartList.filter((product) => product.id !==id));
 
+  
 
     return(
         <CartContext.Provider value={{cartList,addItem, clear,removeItem,isInCart}}>

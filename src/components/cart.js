@@ -37,6 +37,13 @@ const Cart = () => {
                 </div>)
                 }
             </div>}
+
+
+            <div className="desgloseCarrito">
+                <h3>Total:</h3>
+                <p>x Productos</p>
+                <button className="borrarTodo">Finalizar compra</button>
+            </div>
         
         </>
 

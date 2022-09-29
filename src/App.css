@@ -362,3 +362,13 @@ p:link, p:visited, p:active{
   flex-direction: column;
   align-items: center;
 }
+
+.desgloseCarrito{
+  margin: 10px auto;
+  border: 2px solid black;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
