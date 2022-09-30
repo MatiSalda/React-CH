@@ -1,10 +1,32 @@
 import {CartContext } from "./cartContext"
 import { useContext } from "react"
 import { Link } from 'react-router-dom';
-
+import { doc, serverTimestamp, setDoc,collection} from "firebase/firestore";
+import { db } from "./firebaseConfig";
 const Cart = () => {
     const {cartList,clear,removeItem} = useContext(CartContext);
-    
+    const crearOrden = async () => {
+        let productoDb = cartList.map(item => ({
+            id: item.id,
+            precio : item.precio,
+            nombre: item.nombre
+        }))
+        let orden = {
+            
+            comprador: {
+                nombre: "Lionel",
+                apellido: "Meeessi",
+                telefono: "1132899651"
+            },
+            date:{
+                date: serverTimestamp()
+            },
+            items: productoDb
+        }
+        const nuevaOrdenRef = doc(collection (db,"orenes"))
+        await setDoc(nuevaOrdenRef,orden)
+        alert(`Su compra finalizó con exito, esta es su orden de compra: ${nuevaOrdenRef.id}`)
+}
     return (
         <>
         {cartList.length === 0 
@@ -42,7 +64,7 @@ const Cart = () => {
             <div className="desgloseCarrito">
                 <h3>Total:</h3>
                 <p>x Productos</p>
-                <button className="borrarTodo">Finalizar compra</button>
+                <button className="borrarTodo" onClick={crearOrden}>Finalizar compra</button>
             </div>
         
         </>

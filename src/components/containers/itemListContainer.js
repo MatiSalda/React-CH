@@ -30,19 +30,17 @@ const ItemListContainer = () => {
 
     const [data, setData] = useState([])
     useEffect(() => {
-        setCargando(true)
-        
         const firestoreFetch = async() =>{
-      const querySnapshot = await getDocs(collection(db, "productos"))
-      const dataFromFirestore = querySnapshot.docs.map(document => ({
-        id: document.id,
-        ...document.data()
+            const querySnapshot = await getDocs(collection(db, "productos"))
+            const dataFromFirestore = querySnapshot.docs.map(document => ({
+                id: document.id,
+            ...document.data()
+       
     }))
     return dataFromFirestore
 }
 firestoreFetch()
 .then(result => setData(result))
-setCargando(false)
 
     }, [data]);
     return(
