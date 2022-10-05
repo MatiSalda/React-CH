@@ -12,9 +12,9 @@ const Navbar = () => {
        
         <div className='navbar'>
           <ul className='ulNav'>
-          <Link to="/category/3"><li><p  className='navbarLink' href="#">Buzos</p></li></Link>
+          <Link to="/category/3"><li><p  className='navbarLink' href="#">Remeras</p></li></Link>
           <Link to="/category/2"> <li><p className='navbarLink' href="#">Zapatillas</p></li></Link>
-          <Link to="/category/1"><li><p  className='navbarLink' href="#">Remeras</p></li></Link>
+          <Link to="/category/1"><li><p  className='navbarLink' href="#">Buzos</p></li></Link>
             
             </ul>         
         </div>
