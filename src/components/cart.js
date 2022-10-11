@@ -1,5 +1,5 @@
 import {CartContext } from "./cartContext"
-import { useContext, key} from "react"
+import { useContext} from "react"
 import { Link } from 'react-router-dom';
 import { doc, serverTimestamp, setDoc,collection, updateDoc, increment} from "firebase/firestore";
 import { db } from "./firebaseConfig";
