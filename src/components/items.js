@@ -1,8 +1,5 @@
 import '../App.css';
 import Item from './item';
-
-import listaProductos from './baseDatos'
-import fetchDB from './fetchDB';
 const Items = ({data}) => {
 
     return(

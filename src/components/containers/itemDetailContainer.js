@@ -1,7 +1,5 @@
 import '../../App.css'
 import ItemDetail from '../itemDetail.js'
-import fetchDB from '../fetchDB';
-import listaProductos from '../baseDatos'
 import  { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore";
