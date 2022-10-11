@@ -1,9 +1,9 @@
 import '../App.css';
 import { useState } from 'react';
 
-const ItemCount = ({alerta,data}) => {
+const ItemCount = ({alerta,data,initial}) => {
 
-    const [total, setTotal] = useState(0);
+    const [total, setTotal] = useState(initial);
     const restar = () => {
         if (total <=0) {
             

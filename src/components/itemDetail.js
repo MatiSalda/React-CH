@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from './cartContext';
 const ItemDetail = ({data}) => {
 
-    const {addItem,isInCart} = useContext(CartContext);    
+    const {addItem} = useContext(CartContext);    
     const [itemCount, setItemCount] = useState(0)
     
     const addOn = (total) => {
@@ -18,11 +18,12 @@ const ItemDetail = ({data}) => {
         <div className='detailContainer'>
             <div className="fotoDescripcion">
             <h1 className='tituloDetail'>{data.nombre}</h1> 
-                <img src={data.imagen}/>
+                <img src={data.imagen} alt="img"/>
                 {
                 itemCount === 0
                 ? 
                 <ItemCount
+                initial={itemCount}
                 data={data}
                 alerta={addOn}/> 
                 
@@ -34,7 +35,7 @@ const ItemDetail = ({data}) => {
           <div className='infoDetail'>
             <h3>${data.precio}</h3>
             <h5 className='precioDetail'>Quedan {data.stock} {data.nombre}s disponibles.</h5>  
-            <h4 className='descripcionDetail'>{data.desc}</h4>
+            <h4 className='descripcionDetail'>{data.descripcion}</h4>
            </div>
         </div>
     )

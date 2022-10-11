@@ -1,17 +1,18 @@
 import {CartContext } from "./cartContext"
-import { useContext } from "react"
+import { useContext, key} from "react"
 import { Link } from 'react-router-dom';
-import { doc, serverTimestamp, setDoc,collection} from "firebase/firestore";
+import { doc, serverTimestamp, setDoc,collection, updateDoc, increment} from "firebase/firestore";
 import { db } from "./firebaseConfig";
 const Cart = () => {
-    const {cartList,clear,removeItem} = useContext(CartContext);
+    const {cartList,clear,removeItem,precioTotal,cantItems} = useContext(CartContext);
     const crearOrden = async () => {
         let productoDb = cartList.map(item => ({
             
             precio : item.precio,
-            nombre: item.nombre
+            nombre: item.nombre,
+            cantidad: item.cantidadSelec
         }))
-        console.log(productoDb)
+       
         let orden = {
             
             comprador: {
@@ -28,7 +29,17 @@ const Cart = () => {
         }
         const nuevaOrdenRef = doc(collection(db,"ordenes"))
         await setDoc(nuevaOrdenRef,orden)
-        alert("su compra finalizó con exito, esta es su orden de compra:"+ orden)
+
+        cartList.forEach(async(item) => {
+            const itemRef = doc(db,"productos",item.nombre)
+            await updateDoc(itemRef, {
+                stock: increment(-item.cantidadSelec)
+            })
+        })
+
+        alert("su compra finalizó con exito, esta es su orden de compra: "+ nuevaOrdenRef.id)
+        clear()
+        
 }
     return (
         <>
@@ -49,27 +60,33 @@ const Cart = () => {
              ? 
             <div></div>
             :
+            <>
             <div className="containerCarrito">
                 {cartList.map(item => 
-                <div className="cajaCarrito">
+                <div key={item.nombre} className="cajaCarrito">
                     <div className="nombreProducto">{item.nombre}</div>
                         <div className="imagenProductoCarrito">
-                            <img  src={item.imagen}></img>
+                            <img  src={item.imagen} alt="imagen"></img>
                         </div>
-                    <div className="nombreProducto">${item.precio}</div>
-                    <button className="borrarProducto" onClick={()=> removeItem(item.id)}>Borrar producto</button>
+                    <div className="nombreProducto">total:${item.precio * item.cantidadSelec}</div>
+                    <p>Cant:{item.cantidadSelec}</p>
+                    <button className="borrarProducto" onClick={()=> removeItem(item)}>Borrar producto</button>
                     
-                </div>)
-                }
-            </div>}
-
-
-            <div className="desgloseCarrito">
-                <h3>Total:</h3>
-                <p>x Productos</p>
+                    </div>
+                  )}
+            </div>
+     <div className="desgloseCarrito">
+                <h3>total: ${precioTotal()}</h3>
+               <p>cantidad de productos: {cantItems()}</p>
                 <button className="borrarTodo" onClick={crearOrden}>Finalizar compra</button>
             </div>
+            </>
+            }
+
+
+    
         
+           
         </>
 
     )

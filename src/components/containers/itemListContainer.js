@@ -1,15 +1,10 @@
 import "../../App.css";
-import ItemCount from "../itemCount";
 import Items from "../items";
-import listaProductos from '../baseDatos'
-import fetchDB from '../fetchDB';
 import { useState,useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { db } from "../firebaseConfig";
 import { collection, query, where} from "firebase/firestore";
 import { getDocs} from "firebase/firestore";
-
-
 const ItemListContainer = () => {
     const [cargando,setCargando] = useState(false);
     const [total, setTotal] = useState(0);
