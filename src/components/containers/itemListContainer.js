@@ -7,21 +7,7 @@ import { collection, query, where} from "firebase/firestore";
 import { getDocs} from "firebase/firestore";
 const ItemListContainer = () => {
     const [cargando,setCargando] = useState(false);
-    const [total, setTotal] = useState(0);
     const {id} = useParams();
-
-    // const addOn = () => {
-    //     console.log(addOn)
-    //     alert(`Agregaste ${total} productos`)
-    //     }
-    // const restar = () => {
-    //     if (total <=0) {           
-    //     }else setTotal(total-1);
-    // }
-    // const sumar = () => {
-    //     if (total < 5)
-    //     setTotal(total+1);
-    // }
 
     const [data, setData] = useState([])
     useEffect(()=>{

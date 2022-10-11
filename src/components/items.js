@@ -17,7 +17,6 @@ const Items = ({data}) => {
         ))
        }
           
-        
         </div>
     
     )
